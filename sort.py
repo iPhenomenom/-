@@ -171,7 +171,13 @@ def latinizator(folder_path, dic):
         folder_path = folder_path.replace(i, j)
     return folder_path
 
+def main():
+    create_folders_from_list(main_path, extensions)
+    sort_files(main_path)
+    remove_empty_folders(main_path)
+    latinizator(file_old, legend)
 
+    
 for file_old in os.listdir('.'):
 
     file_new = latinizator(file_old, legend)
@@ -187,9 +193,10 @@ for file_old in os.listdir('.'):
             print ('{0: <30}'.format(file_old), 'переименован в ', file_new )
             os.rename(file_old, file_new)
 
+
+
+
 if __name__ == "__main__":
+    main()
     
-    create_folders_from_list(main_path, extensions)
-    sort_files(main_path)
-    remove_empty_folders(main_path)
-    latinizator(file_old, legend)
+    
